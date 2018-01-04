@@ -59,7 +59,7 @@ app.get('/:TIME', function(req,res){
 
         if(/^\d+/.test(req.params.TIME))
                 result = parseTime(date);
-        else if(/^\/api\/unixtime/.test(req.url))
+        else 
                 result = parseUnix(date);
 
         if(result){
