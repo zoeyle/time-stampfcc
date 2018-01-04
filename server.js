@@ -56,7 +56,7 @@ var server = http.createServer(function(req,res){
         var date = new Date (parsedURL.query.iso);
         var result;
 
-        if(/^\/api\/parsetime/.test(req.url))
+        if(/^parsetime/.test(req.url))
                 result = parseTime(date);
         else if(/^\/api\/unixtime/.test(req.url))
                 result = parseUnix(date);
