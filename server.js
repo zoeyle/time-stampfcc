@@ -49,13 +49,14 @@ function parseTime(date){
 function parseUnix(time){
         return {unixtime: time.getTime()};
 }
+
 app.get('/', function(req,res){
   res.send(index.html);  
 });
 
 app.get('/:TIME', function(req,res){
         var date = new Date (req.params.TIME);
-        var ret = { unixtime:;
+        var ret = { unixtime: null, natural: null };
 
         if(/^\d+/.test(req.params.TIME))
                 result = parseTime(date);
