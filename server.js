@@ -49,7 +49,10 @@ function parseTime(date){
 function parseUnix(time){
         return {unixtime: time.getTime()};
 }
-app.get('/', 
+app.get('/', function(req,res){
+  res.send(index.html);  
+});
+
 app.get(function(req,res){
         var parsedURL = url.parse(req.url,true);
         var date = new Date (parsedURL.query.iso);
