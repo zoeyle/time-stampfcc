@@ -53,7 +53,7 @@ app.get('/', function(req,res){
   res.send(index.html);  
 });
 
-app.get(function(req,res){
+app.get('/function(req,res){
         var parsedURL = url.parse(req.url,true);
         var date = new Date (parsedURL.query.iso);
         var result;
