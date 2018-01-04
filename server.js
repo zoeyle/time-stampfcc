@@ -11,10 +11,6 @@ var app = express();
 // http://expressjs.com/en/starter/static-files.html
 // app.use(express.static('public'));
 
-// // http://expressjs.com/en/starter/basic-routing.html
-// app.get("/", function (request, response) {
-//   response.sendFile(__dirname + '/views/index.html');
-// });
 
 // app.get("/dreams", function (request, response) {
 //   response.send(dreams);
@@ -47,9 +43,11 @@ function parseUnix(time){
         return {unixtime: time.getTime()};
 }
 
-app.get('/', function(req,res){
-  res.send(index.html);  
+// http://expressjs.com/en/starter/basic-routing.html
+app.get("/", function (request, response) {
+  response.sendFile(__dirname + '/views/index.html');
 });
+
 
 app.get('/:TIME', function(req,res){
         var date = new Date (req.params.TIME);
