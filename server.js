@@ -64,13 +64,15 @@ app.get('/:TIME', function(req,res){
                 ret[natural] = month[date.getMonth()] + ' ' + date.getDate() + ', ' + date.getFullYear(); 
         } else {
                 ret[unixtime] = date.getTime();
-                ret[natural] = date;
+                ret[natural] = month[date.getMonth()] + ' ' + date.getDate() + ', ' + date.getFullYear(); 
         }
-        if(result){
-        res.writeHead(200, {'Content-Type': 'application/json'});
-        res.end(JSON.stringify(result));
-        } else {
-        res.writeHead(404);
-        res.end(req.url);
-        }
+  
+        res.end(
+        // if(ret){
+        // res.writeHead(200, {'Content-Type': 'application/json'});
+        // res.end(JSON.stringify(result));
+        // } else {
+        // res.writeHead(404);
+        // res.end(req.url);
+        // }
 });
