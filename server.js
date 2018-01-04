@@ -59,8 +59,7 @@ app.get('/:TIME', function(req,res){
                
         } else {
                 var date = new Date (req.params.TIME);
-                ret.unix = date.getTime()/1000;
-                ret.natural = month[date.getMonth()] + ' ' + date.getDate() + ', ' + date.getFullYear(); 
+               
         }
   
         if(date.getTime()){
@@ -70,7 +69,7 @@ app.get('/:TIME', function(req,res){
       
   
         // res.end(JSON.stringify(ret));
-  res.json(ret);
+        res.json(ret);
         // if(ret){
         // res.writeHead(200, {'Content-Type': 'application/json'});
         // res.end(JSON.stringify(result));
