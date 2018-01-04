@@ -5,7 +5,6 @@
 var express = require('express');
 var url = require('url');
 var app = express();
-var http = require('http');
 // we've started you off with Express, 
 // but feel free to use whatever libs or frameworks you'd like through `package.json`.
 
@@ -51,7 +50,7 @@ function parseUnix(time){
         return {unixtime: time.getTime()};
 }
 
-var server = http.createServer(function(req,res){
+app.function(req,res){
         var parsedURL = url.parse(req.url,true);
         var date = new Date (parsedURL.query.iso);
         var result;
