@@ -58,12 +58,13 @@ app.get('/:TIME', function(req,res){
         var date = new Date (req.params.TIME);
         var ret = { unixtime: null, natural: null };
         var month = ["January", "Febuary", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
-        if(/^\d+/.test(req.params.TIME))
+  
+        if(/^\d+/.test(req.params.TIME)){
                 ret[unixtime] = req.params.TIME;
                 ret[natural] = month[date.getMonth()] + ' ' + date.getDate() + ', ' + date.getFullYear(); 
         } else {
                 ret[unixtime] = date.getTime();
-                
+                ret[natural] = req.params.TIME;
         }
         if(result){
         res.writeHead(200, {'Content-Type': 'application/json'});
