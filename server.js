@@ -31,17 +31,17 @@ var app = express();
 
 
 
-function parseTime(date){
-        return {
-        unix: date.,
-        minute: time.getMinutes(),
-        second: time.getSeconds()
-        };
-}
+// function parseTime(date){
+//         return {
+//         unix: date.,
+//         minute: time.getMinutes(),
+//         second: time.getSeconds()
+//         };
+// }
 
-function parseUnix(time){
-        return {unixtime: time.getTime()};
-}
+// function parseUnix(time){
+//         return {unixtime: time.getTime()};
+// }
 
 // http://expressjs.com/en/starter/basic-routing.html
 app.get("/", function (request, response) {
@@ -62,7 +62,7 @@ app.get('/:TIME', function(req,res){
                 ret[natural] = month[date.getMonth()] + ' ' + date.getDate() + ', ' + date.getFullYear(); 
         }
   
-        res.end(JSON.stringify(ret);
+        res.end(JSON.stringify(ret));
         // if(ret){
         // res.writeHead(200, {'Content-Type': 'application/json'});
         // res.end(JSON.stringify(result));
