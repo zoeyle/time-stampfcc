@@ -50,7 +50,7 @@ function parseUnix(time){
         return {unixtime: time.getTime()};
 }
 
-app.function(req,res){
+app.get(function(req,res){
         var parsedURL = url.parse(req.url,true);
         var date = new Date (parsedURL.query.iso);
         var result;
