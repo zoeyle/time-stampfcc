@@ -53,13 +53,13 @@ function parseUnix(time){
 
 var server = http.createServer(function(req,res){
         var parsedURL = url.parse(req.url,true);
-        var time = new Date (parsedURL.query.iso);
+        var date = new Date (parsedURL.query.iso);
         var result;
 
         if(/^\/api\/parsetime/.test(req.url))
-                result = parseTime(time);
+                result = parseTime(date);
         else if(/^\/api\/unixtime/.test(req.url))
-                result = parseUnix(time);
+                result = parseUnix(date);
 
         if(result){
         res.writeHead(200, {'Content-Type': 'application/json'});
