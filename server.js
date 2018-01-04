@@ -53,9 +53,9 @@ app.get('/', function(req,res){
   res.send(index.html);  
 });
 
-app.get('/function(req,res){
+app.get('/:TIME', function(req,res){
         var parsedURL = url.parse(req.url,true);
-        var date = new Date (parsedURL.query.iso);
+        var date = new Date (parsedURL.TIME.iso);
         var result;
 
         if(/^parsetime/.test(req.url))
