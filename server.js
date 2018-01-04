@@ -56,13 +56,18 @@ app.get('/:TIME', function(req,res){
   
         if(/^\d+/.test(req.params.TIME)){
                 var date = new Date (req.params.TIME*1000);
-                ret.unix = parseInt(req.params.TIME);
-                ret.natural = month[date.getMonth()] + ' ' + date.getDate() + ', ' + date.getFullYear(); 
+               
         } else {
                 var date = new Date (req.params.TIME);
                 ret.unix = date.getTime()/1000;
                 ret.natural = month[date.getMonth()] + ' ' + date.getDate() + ', ' + date.getFullYear(); 
         }
+  
+        if(date.getTime()){
+          ret.unix = parseInt(req.params.TIME);
+          ret.natural = month[date.getMonth()] + ' ' + date.getDate() + ', ' + date.getFullYear();  
+        }
+      
   
         // res.end(JSON.stringify(ret));
   res.json(ret);
