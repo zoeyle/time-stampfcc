@@ -55,11 +55,11 @@ app.get('/:TIME', function(req,res){
         var month = ["January", "Febuary", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
   
         if(/^\d+/.test(req.params.TIME)){
-                ret[unixtime] = req.params.TIME;
-                ret[natural] = month[date.getMonth()] + ' ' + date.getDate() + ', ' + date.getFullYear(); 
+                ret.unixtime = req.params.TIME;
+                ret.natural = month[date.getMonth()] + ' ' + date.getDate() + ', ' + date.getFullYear(); 
         } else {
-                ret[unixtime] = date.getTime();
-                ret[natural] = month[date.getMonth()] + ' ' + date.getDate() + ', ' + date.getFullYear(); 
+                ret.unixtime] = date.getTime();
+                ret.natural = month[date.getMonth()] + ' ' + date.getDate() + ', ' + date.getFullYear(); 
         }
   
         res.end(JSON.stringify(ret));
