@@ -33,10 +33,7 @@ var app = express();
 //   "Wash the dishes"
 // ];
 
-// // listen for requests :)
-// var listener = app.listen(process.env.PORT, function () {
-//   console.log('Your app is listening on port ' + listener.address().port);
-// });
+
 
 function parseTime(date){
         return {
@@ -77,4 +74,7 @@ app.get('/:TIME', function(req,res){
         // }
 });
   
-app.listen();
+// listen for requests :)
+var listener = app.listen(process.env.PORT, function () {
+  console.log('Your app is listening on port ' + listener.address().port);
+});
