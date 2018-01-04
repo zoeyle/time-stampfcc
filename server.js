@@ -51,16 +51,16 @@ app.get("/", function (request, response) {
 
 app.get('/:TIME', function(req,res){
        
-        var ret = { unixtime: null, natural: null };
+        var ret = { unix: null, natural: null };
         var month = ["January", "Febuary", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
   
         if(/^\d+/.test(req.params.TIME)){
                 var date = new Date (req.params.TIME*1000);
-                ret.unixtime = parseInt(req.params.TIME);
+                ret.unix = parseInt(req.params.TIME);
                 ret.natural = month[date.getMonth()] + ' ' + date.getDate() + ', ' + date.getFullYear(); 
         } else {
                 var date = new Date (req.params.TIME);
-                ret.unixtime = date.getTime()/1000;
+                ret.unix = date.getTime()/1000;
                 ret.natural = month[date.getMonth()] + ' ' + date.getDate() + ', ' + date.getFullYear(); 
         }
   
