@@ -39,9 +39,9 @@ var http = require('http');
 //   console.log('Your app is listening on port ' + listener.address().port);
 // });
 
-function parseTime(time){
+function parseTime(date){
         return {
-        hour: time.getHours(),
+        unix: date.,
         minute: time.getMinutes(),
         second: time.getSeconds()
         };
