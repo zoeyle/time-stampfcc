@@ -58,7 +58,7 @@ app.get('/:TIME', function(req,res){
                 ret.unixtime = req.params.TIME;
                 ret.natural = month[date.getMonth()] + ' ' + date.getDate() + ', ' + date.getFullYear(); 
         } else {
-                ret.unixtime] = date.getTime();
+                ret.unixtime = date.getTime();
                 ret.natural = month[date.getMonth()] + ' ' + date.getDate() + ', ' + date.getFullYear(); 
         }
   
