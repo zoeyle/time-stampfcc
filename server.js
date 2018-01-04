@@ -67,7 +67,7 @@ app.get('/:TIME', function(req,res){
                 ret[natural] = month[date.getMonth()] + ' ' + date.getDate() + ', ' + date.getFullYear(); 
         }
   
-        res.end(
+        res.end(JSON.stringify(ret);
         // if(ret){
         // res.writeHead(200, {'Content-Type': 'application/json'});
         // res.end(JSON.stringify(result));
@@ -76,3 +76,5 @@ app.get('/:TIME', function(req,res){
         // res.end(req.url);
         // }
 });
+  
+app.listen();
