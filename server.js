@@ -64,7 +64,7 @@ app.get('/:TIME', function(req,res){
                 ret[natural] = month[date.getMonth()] + ' ' + date.getDate() + ', ' + date.getFullYear(); 
         } else {
                 ret[unixtime] = date.getTime();
-                ret[natural] = req.params.TIME;
+                ret[natural] = date;
         }
         if(result){
         res.writeHead(200, {'Content-Type': 'application/json'});
