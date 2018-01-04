@@ -70,13 +70,7 @@ app.get('/:TIME', function(req,res){
   
         // res.end(JSON.stringify(ret));
         res.json(ret);
-        // if(ret){
-        // res.writeHead(200, {'Content-Type': 'application/json'});
-        // res.end(JSON.stringify(result));
-        // } else {
-        // res.writeHead(404);
-        // res.end(req.url);
-        // }
+     
 });
   
 // listen for requests :)
