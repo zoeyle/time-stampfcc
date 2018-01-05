@@ -8,6 +8,13 @@
   box-sizing: border-box;
 }
 
+.center {
+    margin: auto;
+    width: 50%;
+    border: 3px solid green;
+    padding: 10px;
+}
+
 body {
   font-family: helvetica, arial, sans-serif;
   margin: 25px;
@@ -17,11 +24,12 @@ title {
   font-family: helvetical;
   font-weight: bold;
   color: violet;
+
 }
 
 h1 {
   font-weight: bold;
-  color: pink;
+  color: red;
 }
 
 .bold {
