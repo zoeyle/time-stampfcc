@@ -10,8 +10,9 @@
   box-sizing: border-box;
 }
 div{
-   column-width 
+   padding:10px 300px 15px 300px;
 }
+
 body {
   font-family: helvetica, arial, sans-serif;
   margin: 25px;
