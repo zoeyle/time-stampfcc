@@ -13,6 +13,12 @@ body {
   margin: 25px;
 }
 
+title {
+  font-family: helvetical;
+  font-weight: bold;
+  color: violet;
+}
+
 h1 {
   font-weight: bold;
   color: pink;
