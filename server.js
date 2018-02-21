@@ -4,16 +4,11 @@
 // init project
 var express = require('express');
 var app = express();
-// we've started you off with Express, 
-// but feel free to use whatever libs or frameworks you'd like through `package.json`.
-
-// http://expressjs.com/en/starter/static-files.html
 app.use(express.static('public'));
 
 
 
 
-// http://expressjs.com/en/starter/basic-routing.html
 app.get("/", function (request, response) {
   response.sendFile(__dirname + '/views/index.html');
 });
@@ -23,20 +18,18 @@ app.get('/:TIME', function(req,res){
        
         var ret = { unix: null, natural: null };
         var month = ["January", "Febuary", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
-  
-        if(/^\d+/.test(req.params.TIME)){
-                var date = new Date (req.params.TIME*1000);
-               
-        } else {
-                var date = new Date (req.params.TIME);
-               
-        }
-  
-        if(date.getTime()){
-          ret.unix = parseInt(req.params.TIME);
-          ret.natural = month[date.getMonth()] + ' ' + date.getDate() + ', ' + date.getFullYear();  
-        }
-      
+        var date;
+        if(/^\d+/.test(req.params.TIME)){// receive natural date 
+            date = new Date (req.params.TIME*1000);
+            ret.unix = req.params.TIME;
+        } else {  //receive unix time
+            date = new Date (req.params.TIME);
+            ret.unix = new Date(req.params.TIME)/1000;
+        }   
+        
+        if(date.getTime()){ //if given time is a real date
+           ret.natural = month[date.getMonth()] + ' ' + date.getDate() + ', ' + date.getFullYear();  
+        }    
   
         // res.end(JSON.stringify(ret));
         res.json(ret);
